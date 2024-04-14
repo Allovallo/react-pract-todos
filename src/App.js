@@ -7,13 +7,24 @@ class App extends Component {
     todos: initialTodos,
   };
 
+  deleteTodo = todoId => {
+    this.setState(prevState => ({ todos: prevState.todos.filter(todo => todo.id !== todoId) }));
+  };
+
   render() {
     const { todos } = this.state;
+
+    const completedTodosCount = todos.reduce(
+      (total, todo) => (todo.completed ? total + 1 : total),
+      0
+    );
 
     return (
       <div>
         <h1>Перелік завдань</h1>
-        <TodoList todos={todos} />
+        <p>Загальна кількість todo`шек: {todos.length}</p>
+        <p>Кількість виконаних todo'шек: {completedTodosCount}</p>
+        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
       </div>
     );
   }

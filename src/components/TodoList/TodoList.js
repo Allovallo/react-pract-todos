@@ -1,11 +1,13 @@
 import './TodoList.scss';
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ todos, onDeleteTodo }) => (
   <ul className="TodoList">
-    {todos.map(todo => (
-      <li key={todo.id} className="TodoList__item">
-        <p className="TodoList__text">{todo.text}</p>
-        <button className="TodoList__btn">Удалити</button>
+    {todos.map(({ id, text }) => (
+      <li key={id} className="TodoList__item">
+        <p className="TodoList__text">{text}</p>
+        <button className="TodoList__btn" onClick={() => onDeleteTodo(id)}>
+          Удалити
+        </button>
       </li>
     ))}
   </ul>
