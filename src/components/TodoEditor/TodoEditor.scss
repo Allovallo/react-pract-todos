@@ -1,11 +1,9 @@
-@import 'styles/shared.scss';
-
 .TodoEditor {
     width: 600px;
     display: flex;
     flex-direction: column;
     padding: 16px;
-    border: 1px solid $black;
+    border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
 }
@@ -19,7 +17,7 @@
     border-radius: 4px;
 
     font: inherit;
-    line-height: $line-height;
+    line-height: 16px;
     letter-spacing: 0.01em;
 
     resize: none;
@@ -27,19 +25,17 @@
 }
 
 .TodoEditor__button {
-    @extend %button;
-
     width: 100%;
     margin-left: auto;
     border-radius: 4px;
     padding: 12px 24px;
-    background-color: $indigo;
-    color: $white;
+    background-color: indigo;
+    color: white;
     font-weight: 500;
 
     &:hover,
     &:focus {
-        background-color: $indigo-accent;
+        background-color: indigo;
     }
 
     &:active {
