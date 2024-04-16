@@ -4,6 +4,7 @@ import TodoEditor from './components/TodoEditor/TodoEditor';
 import Filter from './components/Filter';
 import initialTodos from '../src/todos.json';
 import { nanoid } from 'nanoid';
+import './styles/base.scss';
 
 class App extends Component {
   state = {
